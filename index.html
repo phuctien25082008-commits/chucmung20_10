@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mừng ngày 20/10</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #9b2458;
+            background: linear-gradient(135deg, #ffd6e7, #fff8fc);
+            overflow-x: hidden;
+        }
+
+        .card {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 8px 30px #d86b9a55;
+        }
+
+        h1 {
+            color: #e63880;
+        }
+
+        .photo {
+            width: 90%;
+            max-width: 350px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        button {
+            background: #e63880;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 13px 22px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #message {
+            display: none;
+            line-height: 1.8;
+        }
+
+        .flower {
+            position: fixed;
+            top: -30px;
+            animation: fall 6s linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🌸 Chúc Mừng 20/10 🌸</h1>
+        <p>Chúc bạn luôn vui vẻ, xinh đẹp và hạnh phúc!</p>
+
+        <img src="./images/anh1.jpg" alt="Ảnh chúc mừng 20/10" width="300">
+
+        <p>
+            <button onclick="openMessage()">💌 Nhận lời chúc</button>
+        </p>
+
+        <div id="message">
+            <h2>💖 Gửi bạn thân thương 💖</h2>
+            Chúc bạn luôn rạng rỡ như những đóa hoa,<br>
+            gặp nhiều may mắn và thành công.<br>
+            Chúc bạn có một ngày 20/10 thật ý nghĩa! 🌷
+        </div>
+    </div>
+
+    <script>function openMessage() {
+    document.getElementById("message").style.display = "block";
+}
+
+function makeFlower() {
+    const f = document.createElement("div");
+    f.className = "flower";
+    f.textContent = ["🌸", "🌷", "💕", "💗"][
+        Math.floor(Math.random() * 4)
+    ];
+    f.style.left = Math.random() * 100 + "vw";
+    f.style.fontSize = "24px";
+    document.body.appendChild(f);
+    setTimeout(() => f.remove(), 6000);
+}
+setInterval(makeFlower, 400);</script>
+</body>
+</html>
